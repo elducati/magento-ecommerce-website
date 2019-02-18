@@ -32,3 +32,6 @@ public function isValid($filename)
     and replace with Magento\Framework\App\View\Asset\MaterializationStrategy\Copy
 6. Magento Logo not loading
     a. Open cmd or terminal and run php bin/magento setup:static-content:deploy in the magento directory.
+7. Cannot replace Luma logo, unable to upload logo
+    a. Got to app/code/Magento/Theme/view/adminhtml/ui_component/design_config_form.xml
+    b. Relace <field name="head_shortcut_icon" formElement="fileUploader"> with <field name="head_shortcut_icon" formElement="imageUploader">
