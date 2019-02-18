@@ -26,3 +26,9 @@ public function isValid($filename)
     b. composer update ( Need to input your mage market username and password)
     c. magento sampledata:deploy
     d. magento setup:upgrade
+5. Magento2 admin menu panel doesn't work
+    a. Got to app/etc/di.xml and find the line 
+    Magento\Framework\App\View\Asset\MaterializationStrategy\Symlink
+    and replace with Magento\Framework\App\View\Asset\MaterializationStrategy\Copy
+6. Magento Logo not loading
+    a. Open cmd or terminal and run php bin/magento setup:static-content:deploy in the magento directory.
