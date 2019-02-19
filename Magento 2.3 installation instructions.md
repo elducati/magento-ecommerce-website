@@ -3,8 +3,9 @@ Installing magento 2.3
 1. use incognito browser to avoid {{menuState.url}} error
 2. After installation, a brown blank page will probably display on the admin page --
 run on terminal or cmd (php .\bin\magento setup:static-content:deploy -f).
-3.  Open magento\lib\internal\Magento\Framework\View\Element\Template\File\Validator.php then replace public function isValid($filename)
-{
+3.  Open magento\lib\internal\Magento\Framework\View\Element\Template\File\Validator.php then replace 
+   *public function isValid($filename)
+    {
     $filename = str_replace('\\', '/', $filename);
     if (!isset($this->_templatesValidationResults[$filename])) {
         $this->_templatesValidationResults[$filename] =
@@ -13,15 +14,15 @@ run on terminal or cmd (php .\bin\magento setup:static-content:deploy -f).
                 || $this->isPathInDirectories($filename, $this->_themesDir)
                 || $this->_isAllowSymlinks)
             && $this->getRootDirectory()->isFile($this->getRootDirectory()->getRelativePath($filename));
-    }
-    return $this->_templatesValidationResults[$filename];
-}
-with
+        }
+        return $this->_templatesValidationResults[$filename];
+        }*
+    with
  
-public function isValid($filename)
+    *public function isValid($filename)
     {
        return true;
-    }
+    }*
 4. Installing sample data procedure
     a. composer config repositories.magento composer https://repo.magento.com/packages.json
     b. composer update ( Need to input your mage market username and password)
