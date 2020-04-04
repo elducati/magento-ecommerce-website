@@ -3,7 +3,7 @@ Installing magento 2.3
 1. use incognito browser to avoid {{menuState.url}} error
 2. After installation, a brown blank page will probably display on the admin page --
 run on terminal or cmd (php .\bin\magento setup:static-content:deploy -f).
-3.  Open magento\lib\internal\Magento\Framework\View\Element\Template\File\Validator.php then replace 
+3.  Open magento\lib\internal\Magento\Framework\View\Element\Template\File\Validator.php or C:\xampp\htdocs\Magento2\vendor\magento\framework\View\Element\Template\File then replace 
    *public function isValid($filename)
     {
     $filename = str_replace('\\', '/', $filename);
